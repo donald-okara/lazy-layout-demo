@@ -1,4 +1,4 @@
-rootProject.name = "Ski"
+rootProject.name = "Lazy_List_Demo"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {

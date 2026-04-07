@@ -1,6 +1,6 @@
 package ke.don.resources
 
-import ski.shared.resources.generated.resources.*
+import lazy_list_demo.shared.resources.generated.resources.*
 
 
 object Resources {
