@@ -14,10 +14,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun ListItemComponent(model: ListModel) {
+fun ListItemComponent(
+    model: ListModel,
+    modifier: Modifier = Modifier,
+) {
     Box(
         contentAlignment = Alignment.Center,
-        modifier = Modifier
+        modifier = modifier
             .background(
                 color = model.color,
                 shape = MaterialTheme.shapes.medium,
@@ -27,7 +30,6 @@ fun ListItemComponent(model: ListModel) {
                 shape = MaterialTheme.shapes.medium,
                 color = MaterialTheme.colorScheme.outlineVariant
             )
-            .height(150.dp)
             .aspectRatio(model.aspectRatio)
     ){
         Text(
