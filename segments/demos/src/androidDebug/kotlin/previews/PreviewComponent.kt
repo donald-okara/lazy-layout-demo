@@ -31,9 +31,9 @@ fun PreviewComponent(
             ) {
                 DeviceFrame(
                     modifier = Modifier,
-                    spec = DeviceCatalog.GalaxyS26.copy(
+                    spec = DeviceCatalog.IPhone17.copy(
                         bezel = DeviceCatalog.GalaxyS26.bezel.copy(
-                            color = Color(0xFF303690)
+                            color = if(isSystemInDarkTheme())Color(0xFF303690) else Color(0xFFFF9500)
                         )
                     ),
                 ){

@@ -1,7 +1,6 @@
 package previews
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import ke.don.demos.list_examples.LazyColumnExample
 import ke.don.demos.list_examples.LazyColumn_StickyHeader_Example
