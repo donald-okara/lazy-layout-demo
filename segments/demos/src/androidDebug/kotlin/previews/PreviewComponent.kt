@@ -33,7 +33,7 @@ fun PreviewComponent(
                     modifier = Modifier,
                     spec = DeviceCatalog.IPhone17.copy(
                         bezel = DeviceCatalog.GalaxyS26.bezel.copy(
-                            color = if(isSystemInDarkTheme())Color(0xFF303690) else Color(0xFFFF9500)
+                            color = if(isSystemInDarkTheme()) Color(0xFFE8732A) else Color(0xFF303690)
                         )
                     ),
                 ){
