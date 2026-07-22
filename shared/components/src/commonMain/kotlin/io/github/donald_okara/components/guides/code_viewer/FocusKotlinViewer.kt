@@ -35,9 +35,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.window.Dialog
-import androidx.compose.ui.window.DialogProperties
 import io.github.donald_okara.components.icon.IconButtonToken
+import io.github.donald_okara.components.layout.Focusable
 import io.github.donald_okara.components.values.Values
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -72,13 +71,8 @@ fun FocusKotlinViewer(
 
     /* ---------- dialog ---------- */
 
-    Dialog(
-        onDismissRequest = onDismiss,
-        properties = DialogProperties(
-            usePlatformDefaultWidth = false,
-            dismissOnBackPress = true,
-            dismissOnClickOutside = false
-        )
+    Focusable(
+        onDismissRequest = onDismiss
     ) {
         Surface(
             modifier = Modifier.fillMaxSize(0.8f),

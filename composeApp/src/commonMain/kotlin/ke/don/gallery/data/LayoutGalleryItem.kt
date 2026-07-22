@@ -7,14 +7,17 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import io.github.donald_okara.components.draggable.DraggableBox
+import io.github.donald_okara.components.layout.Focusable as FocusableUI
 import io.github.donald_okara.components.layout.LazyScatterFlow
 import ke.don.gallery.domain.ComponentGalleryBuilder
 import ke.don.gallery.domain.ComponentType
+import ke.don.gallery.domain.Focusable
 
 fun ComponentGalleryBuilder.layouts() {
     component(
@@ -41,6 +44,52 @@ fun ComponentGalleryBuilder.layouts() {
         dos = scatterDos,
         donts = scatterDonts
     )
+
+    component(
+        label = "Draggable Box",
+        description = draggableDescription,
+        type = ComponentType.Layout,
+        rendered = {
+            Box(modifier = Modifier.fillMaxSize()) {
+                DraggableBox(
+                    initialWidth = 150.dp,
+                    initialHeight = 150.dp
+                ) {
+                    Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text("Drag me or the handle!", style = MaterialTheme.typography.labelSmall)
+                    }
+                }
+            }
+        },
+        focusable = Focusable(
+            path = "components.draggable.DraggableBox",
+            rendered = draggableFocusable()
+        ),
+        dos = draggableDos,
+        donts = draggableDonts
+    )
+}
+
+private fun draggableFocusable(): @Composable (onDismiss: () -> Unit) -> Unit = { onDismiss ->
+    FocusableUI(onDismissRequest = onDismiss) {
+        Box(modifier = Modifier.fillMaxSize()) {
+            DraggableBox(
+                initialWidth = 300.dp,
+                initialHeight = 300.dp,
+                modifier = Modifier.align(Alignment.Center)
+            ) {
+                Box(
+                    modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.surface),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text("Focus Mode: Large Draggable Box")
+                }
+            }
+        }
+    }
 }
 
 val scatterDescription = "The Lazy Scatter Flow layout arranges children in a flow-like structure with configurable row density. It is ideal for showcasing varied content like badges, tags, or small icons in a flexible, non-rigid layout." +
@@ -61,3 +110,24 @@ val scatterDonts = listOf(
     "Don't use for primary navigation elements that require a predictable layout",
     "Avoid overcrowding the flow; ensure there is enough space between items to appreciate the scattering"
 )
+
+val draggableDescription = "A flexible container that can be moved and resized by the user. It is useful for creating customizable dashboards, floating windows, or interactive canvas-like interfaces." +
+        "\n\n" +
+        "Features:" +
+        "\n- Drag anywhere on the box to move it" +
+        "\n- Drag the bottom-right handle to resize" +
+        "\n- Configurable minimum dimensions"
+
+val draggableDos = listOf(
+    "Use for floating tools or inspectors that the user might want to reposition",
+    "Provide clear visual cues that the box is interactive",
+    "Set reasonable minimum sizes to prevent the content from becoming unreadable",
+    "Use in layouts where users benefit from customizing their workspace"
+)
+
+val draggableDonts = listOf(
+    "Don't use for primary content that should have a fixed position in the UI",
+    "Avoid placing too many draggable elements on the screen at once to prevent clutter",
+    "Don't forget to handle edge cases like dragging elements off-screen"
+)
+
