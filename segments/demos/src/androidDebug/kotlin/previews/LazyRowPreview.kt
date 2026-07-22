@@ -8,24 +8,24 @@ import ke.don.demos.list_examples.LazyRowExample
 
 @PreviewLightDark
 @Composable
-fun LazyRowPreview(){
-    PreviewComponent {
+fun LazyRowDevicePreview(){
+    DevicePreviewComponent {
         LazyRowExample()
     }
 }
 
 @PreviewLightDark
 @Composable
-fun LazyColumnPreview(){
-    PreviewComponent {
+fun LazyColumnDevicePreview(){
+    DevicePreviewComponent {
         LazyColumnExample()
     }
 }
 
 @PreviewLightDark
 @Composable
-fun LazyColumn_StickyHeader_Preview(){
-    PreviewComponent {
+fun LazyColumn_StickyHeader_Device_Preview(){
+    DevicePreviewComponent {
         LazyColumn_StickyHeader_Example()
     }
 }

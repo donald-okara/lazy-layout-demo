@@ -7,8 +7,8 @@ import ke.don.demos.list_examples.generatePastelList
 
 @PreviewLightDark
 @Composable
-fun ListItemPreview(){
-    PreviewComponent {
+fun ListItemDevicePreview(){
+    DevicePreviewComponent {
         ListItemComponent(generatePastelList().first())
     }
 }

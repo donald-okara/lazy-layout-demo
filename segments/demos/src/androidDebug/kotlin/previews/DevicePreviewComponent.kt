@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -18,7 +19,7 @@ import io.github.donald_okara.components.devices.deviceSafePadding
 import ke.don.design.theme.AppTheme
 
 @Composable
-fun PreviewComponent(
+fun DevicePreviewComponent(
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit = { Text("Welcome to previews") }
 ) {
@@ -56,4 +57,26 @@ fun PreviewComponent(
         }
     }
 
+}
+
+@Composable
+fun PreviewContent(
+    modifier: Modifier = Modifier,
+    content: @Composable () -> Unit = { Text("Welcome to previews") }
+) {
+    AppTheme(
+        darkTheme = isSystemInDarkTheme()
+    ){
+        Surface(
+            modifier = Modifier
+                .fillMaxWidth()
+                .then(modifier)
+        ) {
+            Box(
+                modifier = Modifier.padding(16.dp)
+            ) {
+                content()
+            }
+        }
+    }
 }
