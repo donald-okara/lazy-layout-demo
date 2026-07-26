@@ -3,7 +3,9 @@ package ke.don.demos.list_examples
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
@@ -32,7 +34,9 @@ fun ListItemComponent(
 fun RoundedBox(
     modifier: Modifier = Modifier,
     title: String = "",
-    color: Color = Pastel.Lavender.color
+    height: Int = 100,
+    color: Color = Pastel.Lavender.color,
+    content: @Composable (BoxScope.() -> Unit)? = null
 ) {
     Box(
         modifier = Modifier
@@ -43,10 +47,14 @@ fun RoundedBox(
                 shape = MaterialTheme.shapes.medium,
                 color = MaterialTheme.colorScheme.outlineVariant
             )
-            .then(modifier)
-            .height(100.dp),
+            .height(height.dp)
+            .then(modifier),
         contentAlignment = Alignment.Center
     ) {
-        Text(title, fontSize = 24.sp, color = Color.Black)
+        if (content != null) {
+            content()
+        } else {
+            Text(title, fontSize = 24.sp, color = Color.Black)
+        }
     }
 }

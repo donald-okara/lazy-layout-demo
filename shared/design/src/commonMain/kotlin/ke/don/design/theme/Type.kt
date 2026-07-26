@@ -1,5 +1,8 @@
+@file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
+
 package ke.don.design.theme
 
+import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.TextStyle
@@ -55,6 +58,26 @@ private fun baseTypography() = Typography(
     labelLarge = baseline.labelLarge.withFont(bodyFontFamily),
     labelMedium = baseline.labelMedium.withFont(bodyFontFamily),
     labelSmall = baseline.labelSmall.withFont(subheadingsFontFamily),
+
+    displayLargeEmphasized = baseline.displayLargeEmphasized.withFont(displayFontFamily),
+    displayMediumEmphasized = baseline.displayMediumEmphasized.withFont(displayFontFamily),
+    displaySmallEmphasized = baseline.displaySmallEmphasized.withFont(subheadingsFontFamily),
+
+    headlineLargeEmphasized = baseline.headlineLargeEmphasized.withFont(displayFontFamily),
+    headlineMediumEmphasized = baseline.headlineMediumEmphasized.withFont(displayFontFamily),
+    headlineSmallEmphasized = baseline.headlineSmallEmphasized.withFont(subheadingsFontFamily),
+
+    titleLargeEmphasized = baseline.titleLargeEmphasized.withFont(displayFontFamily),
+    titleMediumEmphasized = baseline.titleMediumEmphasized.withFont(displayFontFamily),
+    titleSmallEmphasized = baseline.titleSmallEmphasized.withFont(subheadingsFontFamily),
+
+    bodyLargeEmphasized = baseline.bodyLargeEmphasized.withFont(bodyFontFamily),
+    bodyMediumEmphasized = baseline.bodyMediumEmphasized.withFont(bodyFontFamily),
+    bodySmallEmphasized = baseline.bodySmallEmphasized.withFont(subheadingsFontFamily),
+
+    labelLargeEmphasized = baseline.labelLargeEmphasized.withFont(bodyFontFamily),
+    labelMediumEmphasized = baseline.labelMediumEmphasized.withFont(bodyFontFamily),
+    labelSmallEmphasized = baseline.labelSmallEmphasized.withFont(subheadingsFontFamily),
 )
 
 val AppTypography: Typography
@@ -109,6 +132,55 @@ val AppTypography: Typography
                 lineHeight = 32.sp
             ),
             bodySmall = base.bodySmall.copy(
+                fontSize = 20.sp,
+                lineHeight = 28.sp
+            ),
+            displayLargeEmphasized = base.displayLargeEmphasized.copy(
+                fontSize = 112.sp,
+                letterSpacing = (-0.02).em,
+                lineHeight = 140.sp
+            ),
+            displayMediumEmphasized = base.displayMediumEmphasized.copy(
+                fontSize = 72.sp,
+                lineHeight = 90.sp
+            ),
+            displaySmallEmphasized = base.displaySmallEmphasized.copy(
+                fontSize = 56.sp,
+                lineHeight = 70.sp
+            ),
+            headlineLargeEmphasized = base.headlineLargeEmphasized.copy(
+                fontSize = 48.sp,
+                lineHeight = 60.sp
+            ),
+            headlineMediumEmphasized = base.headlineMediumEmphasized.copy(
+                fontSize = 40.sp,
+                lineHeight = 50.sp
+            ),
+            headlineSmallEmphasized = base.headlineSmallEmphasized.copy(
+                fontSize = 36.sp,
+                lineHeight = 45.sp
+            ),
+            titleLargeEmphasized = base.titleLargeEmphasized.copy(
+                fontSize = 32.sp,
+                lineHeight = 40.sp
+            ),
+            titleMediumEmphasized = base.titleMediumEmphasized.copy(
+                fontSize = 28.sp,
+                lineHeight = 35.sp
+            ),
+            titleSmallEmphasized = base.titleSmallEmphasized.copy(
+                fontSize = 24.sp,
+                lineHeight = 30.sp
+            ),
+            bodyLargeEmphasized = base.bodyLargeEmphasized.copy(
+                fontSize = 28.sp,
+                lineHeight = 38.sp
+            ),
+            bodyMediumEmphasized = base.bodyMediumEmphasized.copy(
+                fontSize = 24.sp,
+                lineHeight = 32.sp
+            ),
+            bodySmallEmphasized = base.bodySmallEmphasized.copy(
                 fontSize = 20.sp,
                 lineHeight = 28.sp
             )

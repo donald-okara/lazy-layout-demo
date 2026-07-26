@@ -10,6 +10,16 @@ import ke.don.demos.HorizontalSegmentsDemo
 import ke.don.demos.KodeViewerSlide
 import ke.don.demos.VerticalSegmentsDemo
 import ke.don.demos.WhiteboardSlide
+import ke.don.demos.slides.SessionObjectives
+import ke.don.demos.slides.WrongPictureSlide
+import ke.don.demos.slides.ComponentIntroSlide
+import ke.don.demos.slides.FlowRowSlide
+import ke.don.demos.slides.FlexBoxSlide
+import ke.don.demos.slides.MarqueeSlide
+import ke.don.demos.slides.GridSlide
+import ke.don.demos.slides.LayoutsIntroSlide
+import ke.don.demos.slides.HeroComponentSlide
+import ke.don.demos.slides.LayoutsSummarySlide
 import ke.don.domain.ScreenTransition
 import ke.don.introduction.IntroductionScreen
 import ke.don.ski.SlidesConstants.SESSION_DURATION
@@ -32,6 +42,37 @@ fun skiPresentationSlides(sessionDuration: Duration = SESSION_DURATION): List<Sl
                     footer = null
                 ) {
                     IntroductionScreen()
+                }
+                slide("What is wrong?", notes = wrongPictureNotes) {
+                    WrongPictureSlide()
+                }
+                slide("Objectives", notes = objectivesNotes) {
+                    SessionObjectives()
+                }
+                slide("Components Intro", notes = componentIntroNotes) {
+                    ComponentIntroSlide()
+                }
+                slide("FlowRow", notes = flowRowNotes) {
+                    FlowRowSlide()
+                }
+
+                slide("Marquee", notes = marqueeNotes) {
+                    MarqueeSlide()
+                }
+                slide("FlexBox", notes = flexBoxNotes) {
+                    FlexBoxSlide()
+                }
+                slide("Grid", notes = gridNotes) {
+                    GridSlide()
+                }
+                slide("Layouts Intro", notes = layoutsIntroNotes) {
+                    LayoutsIntroSlide()
+                }
+                slide("Adaptive Hero", notes = heroComponentNotes) {
+                    HeroComponentSlide()
+                }
+                slide("Layouts Summary", notes = layoutsSummaryNotes) {
+                    LayoutsSummarySlide()
                 }
                 slide("Example Screen") {
                     ExampleSlide()

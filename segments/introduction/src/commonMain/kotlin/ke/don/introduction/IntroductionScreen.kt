@@ -38,7 +38,9 @@ fun IntroductionScreen(
     ) {
         TextSegment(
             title = "Adaptive layouts in Compose",
-            presenter = "Donald Isoe"
+            presenter = "Donald Isoe",
+            occupation = "Android Engineer",
+            organisation = "Terra"
         )
 
         ImageSegment(
@@ -60,7 +62,7 @@ private fun ImageSegment(
     ) {
         ExpressivePictureFrame(
             image = painter,
-            sizeDp = 400,
+            sizeDp = 500,
             polygon = MaterialShapes.Clover4Leaf,
             backgroundColor = MaterialTheme.colorScheme.primary,
             brushType = BrushType.SWEEP
@@ -86,14 +88,14 @@ private fun TextSegment(
     ) {
         Text(
             title,
-            style = MaterialTheme.typography.displayMediumEmphasized,
+            style = MaterialTheme.typography.displayLargeEmphasized,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Start
         )
         Spacer(modifier = Modifier.height(16.dp))
         Text(
             presenter,
-            style = MaterialTheme.typography.bodyLarge,
+            style = MaterialTheme.typography.titleMediumEmphasized,
             fontWeight = FontWeight.Bold
         )
 
@@ -101,14 +103,14 @@ private fun TextSegment(
             Spacer(modifier = Modifier.height(16.dp))
             Text(
                 occupation,
-                style = MaterialTheme.typography.bodyMediumEmphasized
+                style = MaterialTheme.typography.bodyLargeEmphasized
             )
         }
         organisation?.let {
             Spacer(modifier = Modifier.height(16.dp))
             Text(
                 "At $organisation",
-                style = MaterialTheme.typography.bodySmall
+                style = MaterialTheme.typography.bodyLargeEmphasized
             )
         }
     }
