@@ -16,6 +16,7 @@ object Resources {
     object Images {
 
         //People
+        val DON = Res.drawable.don
         val IAN = Res.drawable.ian_dooley
         val IVANA = Res.drawable.ivana_cajina
         val RAFAELLA = Res.drawable.rafaella_mendes

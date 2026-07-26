@@ -57,6 +57,9 @@ fun DeviceGallery() {
             item {
                 DeviceItem("iPhone 17 Pro", DeviceCatalog.IPhone17)
             }
+            item {
+                DeviceItem("Google Pixel Fold", DeviceCatalog.PixelFold)
+            }
         }
     }
 }
@@ -72,6 +75,7 @@ private fun DeviceItem(name: String, spec: DeviceSpec) {
         }
         DeviceControls(
             orientation = orientation,
+            isFoldable = spec.isFoldable,
             onOrientationChange = {
                 orientation = it
             }
@@ -118,12 +122,16 @@ fun DemoScreen() {
 fun DeviceControls(
     orientation: DeviceOrientation,
     onOrientationChange: (DeviceOrientation) -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    isFoldable: Boolean = false
 ) {
-    val options = listOf(
+    val options = mutableListOf(
         DeviceOrientation.PORTRAIT to "Portrait",
         DeviceOrientation.LANDSCAPE to "Landscape"
     )
+    if (isFoldable) {
+        options.add(DeviceOrientation.HALF_OPENED to "Half-opened")
+    }
 
     Row(
         modifier = modifier.padding(horizontal = 16.dp),

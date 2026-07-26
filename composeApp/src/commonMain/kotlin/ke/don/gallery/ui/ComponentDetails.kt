@@ -145,15 +145,10 @@ fun ComponentDetail(
                                     component.rendered()
                                 }
 
-                                Surface(
-                                    shape = RoundedCornerShape(50),
-                                    tonalElevation = 6.dp
+                                Button(
+                                    onClick = { showFocusable = true }
                                 ) {
-                                    Button(
-                                        onClick = { showFocusable = true }
-                                    ) {
-                                        Text("Open Focus Mode")
-                                    }
+                                    Text("Open Focus Mode")
                                 }
                             }
 

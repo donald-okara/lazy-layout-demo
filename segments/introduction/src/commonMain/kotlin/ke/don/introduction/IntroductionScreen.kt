@@ -37,12 +37,12 @@ fun IntroductionScreen(
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         TextSegment(
-            title = "Building Slides with Jetpack Compose on Ski",
-            presenter = "Jane Doe"
+            title = "Adaptive layouts in Compose",
+            presenter = "Donald Isoe"
         )
 
         ImageSegment(
-            painter = Resources.Images.RAFAELLA
+            painter = Resources.Images.DON
         )
     }
 }
