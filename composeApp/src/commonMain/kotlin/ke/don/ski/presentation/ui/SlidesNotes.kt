@@ -65,3 +65,28 @@ val layoutsSummaryNotes = listOf(
     AnnotatedString("Most layouts are just nested rows and columns."),
     AnnotatedString("A profile header in a card is a great example of when to switch axes based on width.")
 )
+
+val collectionIntroNotes = listOf(
+    AnnotatedString("Part 3 — Lists Aren't Always Lists"),
+    AnnotatedString("Components adapt. Collections should too.")
+)
+
+val collectionProblemNotes = listOf(
+    AnnotatedString("Why are we still pretending there's only one column?"),
+    AnnotatedString("Stretching a single-column list across a tablet width makes it hard to scan and waste space.")
+)
+
+val collectionGridNotes = listOf(
+    AnnotatedString("LazyVerticalGrid and LazyHorizontalGrid allow for multi-column/row layouts."),
+    AnnotatedString("Staggered variants also help with dynamic content heights.")
+)
+
+val collectionStaggeredGridNotes = listOf(
+    AnnotatedString("LazyVerticalStaggeredGrid handles items with different aspect ratios efficiently."),
+    AnnotatedString("It prevents the 'empty pockets' of space that regular grids might have when items are uneven.")
+)
+
+val collectionPaginationNotes = listOf(
+    AnnotatedString("Endless scroll works well for mobile/main features."),
+    AnnotatedString("Paging bars can be better when the collection is just part of a larger, complex screen.")
+)

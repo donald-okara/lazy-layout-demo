@@ -20,6 +20,11 @@ import ke.don.demos.slides.GridSlide
 import ke.don.demos.slides.LayoutsIntroSlide
 import ke.don.demos.slides.HeroComponentSlide
 import ke.don.demos.slides.LayoutsSummarySlide
+import ke.don.demos.slides.CollectionIntroSlide
+import ke.don.demos.slides.CollectionProblemSlide
+import ke.don.demos.slides.CollectionGridSlide
+import ke.don.demos.slides.CollectionStaggeredGridSlide
+import ke.don.demos.slides.CollectionPaginationSlide
 import ke.don.domain.ScreenTransition
 import ke.don.introduction.IntroductionScreen
 import ke.don.ski.SlidesConstants.SESSION_DURATION
@@ -73,6 +78,21 @@ fun skiPresentationSlides(sessionDuration: Duration = SESSION_DURATION): List<Sl
                 }
                 slide("Layouts Summary", notes = layoutsSummaryNotes) {
                     LayoutsSummarySlide()
+                }
+                slide("Collection Intro", notes = collectionIntroNotes) {
+                    CollectionIntroSlide()
+                }
+                slide("Collection Problem", notes = collectionProblemNotes) {
+                    CollectionProblemSlide()
+                }
+                slide("Collection Grid", notes = collectionGridNotes) {
+                    CollectionGridSlide()
+                }
+                slide("Collection Staggered Grid", notes = collectionStaggeredGridNotes) {
+                    CollectionStaggeredGridSlide()
+                }
+                slide("Collection Pagination", notes = collectionPaginationNotes) {
+                    CollectionPaginationSlide()
                 }
                 slide("Example Screen") {
                     ExampleSlide()

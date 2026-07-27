@@ -26,7 +26,8 @@ fun ListItemComponent(
     RoundedBox(
         modifier = modifier.aspectRatio(model.aspectRatio),
         title = model.id.toString(),
-        color = model.color
+        color = model.color,
+        height = null
     )
 }
 
@@ -34,7 +35,7 @@ fun ListItemComponent(
 fun RoundedBox(
     modifier: Modifier = Modifier,
     title: String = "",
-    height: Int = 100,
+    height: Int? = 100,
     color: Color = Pastel.Lavender.color,
     content: @Composable (BoxScope.() -> Unit)? = null
 ) {
@@ -47,7 +48,7 @@ fun RoundedBox(
                 shape = MaterialTheme.shapes.medium,
                 color = MaterialTheme.colorScheme.outlineVariant
             )
-            .height(height.dp)
+            .then(if (height != null) Modifier.height(height.dp) else Modifier)
             .then(modifier),
         contentAlignment = Alignment.Center
     ) {
