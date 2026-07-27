@@ -1,10 +1,22 @@
 package ke.don.ski.presentation.ui
 
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withStyle
+
+private val focusableWarning = buildAnnotatedString {
+    withStyle(style = SpanStyle(color = Color.Red)) {
+        append("Yooh. I hope you have not toggled focusable on this screen 🤨")
+    }
+}
 
 val introductionNotes = listOf(
     AnnotatedString("Remember to say hallo"),
-    AnnotatedString("Say something cool")
+    AnnotatedString("Say something cool"),
+    AnnotatedString("Talk about getting a screenshot from your app on a tablet and were shocked"),
+    AnnotatedString("We can no longer ignore larger screens."),
 )
 
 val objectivesNotes = listOf(
@@ -19,7 +31,8 @@ val wrongPictureNotes = listOf(
     AnnotatedString("Look at this layout on a folded device."),
     AnnotatedString("It looks fine, right? It's a standard mobile layout."),
     AnnotatedString("But watch what happens when we unfold the device or move to a tablet."),
-    AnnotatedString("The 'stretch' problem: Everything just gets wider, but not better.")
+    AnnotatedString("The 'stretch' problem: Everything just gets wider, but not better."),
+    focusableWarning
 )
 
 val componentIntroNotes = listOf(
@@ -30,22 +43,26 @@ val componentIntroNotes = listOf(
 
 val flowRowNotes = listOf(
     AnnotatedString("FlowRow allows items to wrap naturally when they hit the edge of the container."),
-    AnnotatedString("This is the first step in making a component adaptive—letting it flow.")
+    AnnotatedString("This is the first step in making a component adaptive—letting it flow."),
+    focusableWarning
 )
 
 val flexBoxNotes = listOf(
     AnnotatedString("FlexBox takes FlowRow further by allowing items to grow and fill remaining space."),
-    AnnotatedString("It gives you fine-grained control over how items behave in a wrapping layout.")
+    AnnotatedString("It gives you fine-grained control over how items behave in a wrapping layout."),
+    focusableWarning
 )
 
 val marqueeNotes = listOf(
     AnnotatedString("Marquee is great for secondary information that might be too long."),
-    AnnotatedString("Instead of truncating with '...', we can scroll the text to ensure it's still accessible.")
+    AnnotatedString("Instead of truncating with '...', we can scroll the text to ensure it's still accessible."),
+    focusableWarning
 )
 
 val gridNotes = listOf(
     AnnotatedString("The experimental Grid API allows for rigid but responsive layouts."),
-    AnnotatedString("You can programmatically change columns and rows based on the available width.")
+    AnnotatedString("You can programmatically change columns and rows based on the available width."),
+    focusableWarning
 )
 
 val layoutsIntroNotes = listOf(
@@ -57,7 +74,8 @@ val heroComponentNotes = listOf(
     AnnotatedString("The Hero segment is a classic use case for adaptive components."),
     AnnotatedString("Small screen: Focus on glanceability and core actions."),
     AnnotatedString("Large screen: Use the space for immersive imagery and more detailed description."),
-    AnnotatedString("The focusable interaction allows us to transition from a list item to a dedicated detail view.")
+    AnnotatedString("The focusable interaction allows us to transition from a list item to a dedicated detail view."),
+    focusableWarning
 )
 
 val layoutsSummaryNotes = listOf(
@@ -78,15 +96,29 @@ val collectionProblemNotes = listOf(
 
 val collectionGridNotes = listOf(
     AnnotatedString("LazyVerticalGrid and LazyHorizontalGrid allow for multi-column/row layouts."),
-    AnnotatedString("Staggered variants also help with dynamic content heights.")
+    AnnotatedString("Staggered variants also help with dynamic content heights."),
+    focusableWarning
 )
 
 val collectionStaggeredGridNotes = listOf(
     AnnotatedString("LazyVerticalStaggeredGrid handles items with different aspect ratios efficiently."),
-    AnnotatedString("It prevents the 'empty pockets' of space that regular grids might have when items are uneven.")
+    AnnotatedString("It prevents the 'empty pockets' of space that regular grids might have when items are uneven."),
+    focusableWarning
 )
 
 val collectionPaginationNotes = listOf(
     AnnotatedString("Endless scroll works well for mobile/main features."),
-    AnnotatedString("Paging bars can be better when the collection is just part of a larger, complex screen.")
+    AnnotatedString("Paging bars can be better when the collection is just part of a larger, complex screen."),
+    focusableWarning
+)
+
+val kodeViewerNotes = listOf(
+    AnnotatedString("Demonstrate the Kotlin Code Viewer component."),
+    AnnotatedString("It supports syntax highlighting and theme toggling."),
+    focusableWarning
+)
+
+val whiteboardNotes = listOf(
+    AnnotatedString("The whiteboard allows for free-form drawing and annotations during the session."),
+    focusableWarning
 )

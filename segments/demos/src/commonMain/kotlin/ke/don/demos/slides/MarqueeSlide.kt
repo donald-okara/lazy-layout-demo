@@ -8,6 +8,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import io.github.donald_okara.components.guides.code_viewer.FocusKotlinViewer
@@ -41,7 +42,8 @@ fun MarqueeSlide(
                                 "This is a very long text that would normally be truncated with ellipses, but thanks to basicMarquee it scrolls!",
                                 modifier = Modifier.padding(horizontal = 16.dp).basicMarquee(),
                                 style = MaterialTheme.typography.titleLarge,
-                                maxLines = 1
+                                maxLines = 1,
+                                color = Color.Black
                             )
                         }
 
@@ -54,7 +56,8 @@ fun MarqueeSlide(
                                 "Short marquee",
                                 modifier = Modifier.padding(horizontal = 12.dp).basicMarquee(),
                                 style = MaterialTheme.typography.bodyLarge,
-                                maxLines = 1
+                                maxLines = 1,
+                                color = Color.Black
                             )
                         }
                     }

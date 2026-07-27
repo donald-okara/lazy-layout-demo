@@ -97,10 +97,10 @@ fun skiPresentationSlides(sessionDuration: Duration = SESSION_DURATION): List<Sl
                 slide("Example Screen") {
                     ExampleSlide()
                 }
-                slide("Kode Viewer") {
+                slide("Kode Viewer", notes = kodeViewerNotes) {
                     KodeViewerSlide()
                 }
-                slide("Whiteboard Screen"){
+                slide("Whiteboard Screen", notes = whiteboardNotes){
                     WhiteboardSlide()
                 }
                 slide("Vertical Segments Demo") {
