@@ -18,6 +18,7 @@ import ke.don.ski.domain.SlideConfig
 import ke.don.ski.navigation.DeckNavigator
 import ke.don.ski.presentation.PresentationDeck
 import ke.don.ski.presentation.ui.skiPresentationSlides
+import kotlin.time.Duration.Companion.minutes
 import kotlin.time.Duration.Companion.seconds
 
 /**
@@ -65,6 +66,6 @@ fun Deck(
 }
 
 object SlidesConstants {
-    val SESSION_DURATION = 10.seconds
+    val SESSION_DURATION = 45.minutes
     const val FRAME_OPACITY = Values.FRAME_OPACITY
 }
