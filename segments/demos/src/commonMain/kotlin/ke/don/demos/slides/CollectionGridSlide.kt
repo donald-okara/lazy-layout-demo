@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import io.github.donald_okara.components.guides.code_viewer.FocusKotlinViewer
+import ke.don.demos.list_examples.ContentLines
 import ke.don.demos.list_examples.ListItemComponent
 import ke.don.demos.list_examples.generatePastelList
 
@@ -22,6 +23,7 @@ fun CollectionGridSlide(
 ) {
     val items = generatePastelList()
     var showCode by remember { mutableStateOf(false) }
+    var isCodeDarkTheme by remember { mutableStateOf(true) }
 
     Box(modifier = modifier.fillMaxSize()) {
         Column(
@@ -53,9 +55,13 @@ fun CollectionGridSlide(
                 items(items) {
                     ListItemComponent(
                         model = it,
+                        contentAlignment = Alignment.BottomStart,
                         modifier = Modifier
                             .height(100.dp)
-                            .fillMaxWidth()
+                            .fillMaxWidth(),
+                        content = {
+                            ContentLines()
+                        }
                     )
                 }
             }
@@ -72,8 +78,8 @@ fun CollectionGridSlide(
     if (showCode) {
         FocusKotlinViewer(
             onDismiss = { showCode = false },
-            darkTheme = true,
-            toggleTheme = {}
+            darkTheme = isCodeDarkTheme,
+            toggleTheme = { isCodeDarkTheme = !isCodeDarkTheme }
         ) {
             """
             LazyVerticalGrid(

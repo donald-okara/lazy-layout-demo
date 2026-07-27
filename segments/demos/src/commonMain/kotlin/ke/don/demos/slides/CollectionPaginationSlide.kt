@@ -19,6 +19,7 @@ fun CollectionPaginationSlide(
     modifier: Modifier = Modifier
 ) {
     var showCode by remember { mutableStateOf(false) }
+    var isCodeDarkTheme by remember { mutableStateOf(true) }
 
     Box(modifier = modifier.fillMaxSize()) {
         Column(
@@ -103,8 +104,8 @@ fun CollectionPaginationSlide(
     if (showCode) {
         FocusKotlinViewer(
             onDismiss = { showCode = false },
-            darkTheme = true,
-            toggleTheme = {}
+            darkTheme = isCodeDarkTheme,
+            toggleTheme = { isCodeDarkTheme = !isCodeDarkTheme }
         ) {
             """
             // Conceptual Paging Bar

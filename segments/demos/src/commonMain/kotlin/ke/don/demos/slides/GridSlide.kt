@@ -22,6 +22,7 @@ fun GridSlide(
 ) {
     var showCode by remember { mutableStateOf(false) }
     var showWindowSizeCode by remember { mutableStateOf(false) }
+    var isCodeDarkTheme by remember { mutableStateOf(true) }
 
     HorizontallySegmentedScreen(
         modifier = modifier.fillMaxSize().padding(32.dp),
@@ -131,8 +132,8 @@ fun GridSlide(
     if (showCode) {
         FocusKotlinViewer(
             onDismiss = { showCode = false },
-            darkTheme = true,
-            toggleTheme = {}
+            darkTheme = isCodeDarkTheme,
+            toggleTheme = { isCodeDarkTheme = !isCodeDarkTheme }
         ) {
             """
             val adaptiveInfo = currentWindowAdaptiveInfoV2()
@@ -166,8 +167,8 @@ fun GridSlide(
     if (showWindowSizeCode) {
         FocusKotlinViewer(
             onDismiss = { showWindowSizeCode = false },
-            darkTheme = true,
-            toggleTheme = {}
+            darkTheme = isCodeDarkTheme,
+            toggleTheme = { isCodeDarkTheme = !isCodeDarkTheme }
         ) {
             """
             // Adaptive Window Size API V2

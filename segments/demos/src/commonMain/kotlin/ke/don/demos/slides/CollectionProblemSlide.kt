@@ -12,6 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import ke.don.demos.list_examples.ContentLines
 import ke.don.demos.list_examples.ListItemComponent
 import ke.don.demos.list_examples.generatePastelList
 
@@ -55,7 +56,11 @@ fun CollectionProblemSlide(
                         items(items) {
                             ListItemComponent(
                                 it,
-                                modifier = Modifier.fillMaxWidth()
+                                contentAlignment = Alignment.BottomStart,
+                                modifier = Modifier.fillMaxWidth(),
+                                content = {
+                                    ContentLines()
+                                }
                             )
                         }
                     }
@@ -79,7 +84,10 @@ fun CollectionProblemSlide(
                         items(items) {
                             ListItemComponent(
                                 model = it,
-                                modifier = Modifier.fillMaxWidth()
+                                modifier = Modifier.fillMaxWidth(),
+                                content = {
+                                    ContentLines()
+                                }
                             )
                         }
                     }

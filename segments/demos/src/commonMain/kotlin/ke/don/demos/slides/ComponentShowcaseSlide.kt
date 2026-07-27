@@ -24,6 +24,7 @@ fun ComponentShowcaseSlide(
     modifier: Modifier = Modifier
 ) {
     var selectedCode by remember { mutableStateOf<String?>(null) }
+    var isCodeDarkTheme by remember { mutableStateOf(true) }
 
     HorizontallySegmentedScreen(
         modifier = modifier.fillMaxSize().padding(32.dp),
@@ -150,8 +151,8 @@ fun ComponentShowcaseSlide(
     if (selectedCode != null) {
         FocusKotlinViewer(
             onDismiss = { selectedCode = null },
-            darkTheme = true,
-            toggleTheme = {}
+            darkTheme = isCodeDarkTheme,
+            toggleTheme = { isCodeDarkTheme = !isCodeDarkTheme }
         ) {
             selectedCode!!
         }

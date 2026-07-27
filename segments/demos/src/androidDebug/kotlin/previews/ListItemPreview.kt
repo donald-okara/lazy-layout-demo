@@ -2,6 +2,7 @@ package previews
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.PreviewLightDark
+import ke.don.demos.list_examples.ContentLines
 import ke.don.demos.list_examples.ListItemComponent
 import ke.don.demos.list_examples.generatePastelList
 
@@ -9,6 +10,8 @@ import ke.don.demos.list_examples.generatePastelList
 @Composable
 fun ListItemDevicePreview(){
     DevicePreviewComponent {
-        ListItemComponent(generatePastelList().first())
+        ListItemComponent(generatePastelList().first()) {
+            ContentLines()
+        }
     }
 }

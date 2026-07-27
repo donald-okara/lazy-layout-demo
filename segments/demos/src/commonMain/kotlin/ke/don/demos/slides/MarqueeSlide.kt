@@ -21,6 +21,7 @@ fun MarqueeSlide(
     modifier: Modifier = Modifier
 ) {
     var showCode by remember { mutableStateOf(false) }
+    var isCodeDarkTheme by remember { mutableStateOf(true) }
 
     HorizontallySegmentedScreen(
         modifier = modifier.fillMaxSize().padding(32.dp),
@@ -89,8 +90,8 @@ fun MarqueeSlide(
     if (showCode) {
         FocusKotlinViewer(
             onDismiss = { showCode = false },
-            darkTheme = true,
-            toggleTheme = {}
+            darkTheme = isCodeDarkTheme,
+            toggleTheme = { isCodeDarkTheme = !isCodeDarkTheme }
         ) {
             """
             Text(
