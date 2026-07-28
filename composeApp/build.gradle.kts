@@ -16,6 +16,9 @@ kotlin {
         commonMain.dependencies {
             implementation(libs.bundles.serialization)
             implementation(compose.components.uiToolingPreview)
+            implementation(libs.androidx.navigation3.ui)
+            implementation(libs.androidx.adaptive.navigation3)
+            implementation(libs.ski.components)
         }
     }
 }
