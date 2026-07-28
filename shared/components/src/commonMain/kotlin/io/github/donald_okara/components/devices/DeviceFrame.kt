@@ -97,7 +97,8 @@ fun DeviceFrame(
                     .then(
                         // When Landscape, we need to swap constraints so the Portrait chassis
                         // fills the Landscape outer container before it is rotated.
-                        if (isPortrait) Modifier.fillMaxSize()
+                        // For Portrait and Half-Opened (which is upright), we just fill max size.
+                        if (isPortrait || isHalfOpened) Modifier.fillMaxSize()
                         else Modifier.layout { measurable, constraints ->
                             val placeable = measurable.measure(
                                 constraints.copy(

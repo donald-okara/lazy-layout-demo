@@ -122,3 +122,18 @@ val whiteboardNotes = listOf(
     AnnotatedString("The whiteboard allows for free-form drawing and annotations during the session."),
     focusableWarning
 )
+
+val navigationIntroNotes = listOf(
+    AnnotatedString("Part 4 — The Architecture of Adaptation"),
+    AnnotatedString("We've seen how components and collections adapt."),
+    AnnotatedString("Now, how do we structure the entire application to handle these transitions seamlessly?")
+)
+
+val navigationStrategiesNotes = listOf(
+    AnnotatedString("One of the best ways to utilize a really wide screen is to fit multiple navigation destinations simultaneously."),
+    AnnotatedString("Think about a Pixel Fold or a tablet—we have enough space to show both the 'where' (List) and the 'what' (Detail)."),
+    AnnotatedString("Navigation 3 introduces Scene Strategies for standard adaptive patterns."),
+    AnnotatedString("List-Detail and Supporting Pane strategies handle pane switching automatically based on window size."),
+    AnnotatedString("Scene Decorators allow us to wrap destinations with consistent UI like AppBars or custom transitions."),
+    AnnotatedString("NavigationSuiteScaffold handles the transition between BottomBar, NavRail, and Drawer.")
+)

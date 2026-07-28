@@ -25,6 +25,8 @@ import ke.don.demos.slides.CollectionProblemSlide
 import ke.don.demos.slides.CollectionGridSlide
 import ke.don.demos.slides.CollectionStaggeredGridSlide
 import ke.don.demos.slides.CollectionPaginationSlide
+import ke.don.demos.slides.NavigationIntroSlide
+import ke.don.demos.slides.NavigationStrategiesSlide
 import ke.don.domain.ScreenTransition
 import ke.don.introduction.IntroductionScreen
 import ke.don.ski.SlidesConstants.SESSION_DURATION
@@ -94,23 +96,11 @@ fun skiPresentationSlides(sessionDuration: Duration = SESSION_DURATION): List<Sl
                 slide("Collection Pagination", notes = collectionPaginationNotes) {
                     CollectionPaginationSlide()
                 }
-                slide("Example Screen") {
-                    ExampleSlide()
+                slide("Navigation Intro", notes = navigationIntroNotes) {
+                    NavigationIntroSlide()
                 }
-                slide("Kode Viewer", notes = kodeViewerNotes) {
-                    KodeViewerSlide()
-                }
-                slide("Whiteboard Screen", notes = whiteboardNotes){
-                    WhiteboardSlide()
-                }
-                slide("Vertical Segments Demo") {
-                    VerticalSegmentsDemo()
-                }
-                slide("Horizontal Segments Demo") {
-                    HorizontalSegmentsDemo()
-                }
-                slide("Device Frames"){
-                    DeviceGallery()
+                slide("Navigation Strategies", notes = navigationStrategiesNotes) {
+                    NavigationStrategiesSlide()
                 }
             }
         }
