@@ -27,6 +27,8 @@ import ke.don.demos.slides.CollectionStaggeredGridSlide
 import ke.don.demos.slides.CollectionPaginationSlide
 import ke.don.demos.slides.NavigationIntroSlide
 import ke.don.demos.slides.NavigationStrategiesSlide
+import ke.don.demos.slides.ConclusionSlide
+import ke.don.demos.slides.QuestionsSlide
 import ke.don.domain.ScreenTransition
 import ke.don.introduction.IntroductionScreen
 import ke.don.ski.SlidesConstants.SESSION_DURATION
@@ -101,6 +103,12 @@ fun skiPresentationSlides(sessionDuration: Duration = SESSION_DURATION): List<Sl
                 }
                 slide("Navigation Strategies", notes = navigationStrategiesNotes) {
                     NavigationStrategiesSlide()
+                }
+                slide("Conclusion", notes = conclusionNotes) {
+                    ConclusionSlide()
+                }
+                slide("Questions", notes = questionsNotes) {
+                    QuestionsSlide()
                 }
             }
         }

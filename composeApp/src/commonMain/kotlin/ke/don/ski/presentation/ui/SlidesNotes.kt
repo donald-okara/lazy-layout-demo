@@ -137,3 +137,14 @@ val navigationStrategiesNotes = listOf(
     AnnotatedString("Scene Decorators allow us to wrap destinations with consistent UI like AppBars or custom transitions."),
     AnnotatedString("NavigationSuiteScaffold handles the transition between BottomBar, NavRail, and Drawer.")
 )
+
+val conclusionNotes = listOf(
+    AnnotatedString("Summarizing the session."),
+    AnnotatedString("We started small with components, moved to layouts, collections, and finally architecture."),
+    AnnotatedString("Adaptive UI is a journey, not a destination.")
+)
+
+val questionsNotes = listOf(
+    AnnotatedString("Open floor for questions."),
+    AnnotatedString("Point out the socials marquee at the bottom for further connection.")
+)
