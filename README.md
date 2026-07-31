@@ -1,3 +1,11 @@
+# Adaptive & Lazy: Building Modern UIs with Compose Multiplatform
+
+This is an interactive presentation built using the **Ski** framework. It explores advanced layout techniques in Compose Multiplatform, including Lazy layouts, FlowRow, FlexBox, and adaptive navigation strategies.
+
+**🚀 [View Live Presentation](https://adaptive-compose.vercel.app)**
+
+---
+
 <p align="center">
   <img src="ski_logo.png" 
        alt="Ski Logo" 
